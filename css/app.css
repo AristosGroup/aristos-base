@@ -2160,6 +2160,9 @@ fieldset[disabled] .btn-gplus.active {
 .bg-success .text-muted {
   color: #eef8e6;
 }
+
+
+
 .bg-info {
   background-color: #5dcff3;
   color: #ffffff;
@@ -2796,4 +2799,32 @@ fieldset[disabled] .btn-gplus.active {
   .hidden-xs.show {
     display: inherit !important;
   }
+}
+
+/**
+**/
+.bg-aristos {
+    background-color: #3ca5d7;
+    color: #ffffff;
+}
+
+.bg-aristos.dker {
+    background-color: #3ca5d7;
+    color: #ffffff;
+}
+
+.bg-aristos.dker a {
+    color: #ffffff;
+
+}
+
+.modal-dialog {
+    z-index: 10000;
+}
+
+#signTo #login-buttons-password {
+  float:none;
+}
+#signTo #login-dropdown-list {
+    list-style: none;
 }

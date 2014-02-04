@@ -5,7 +5,13 @@ Aristos = function () {
 
 };
 
-Aristos.prototype.mainMenu = function () {
+Aristos.prototype.getMainMenu = function () {
+
+    var self = this;
+    //filter по доступу
+/*    this.mainMenu = _.filter(this.mainMenu, function (item) {
+        return self.allowViewMainMenu(item);
+    });*/
 
     return _.sortBy(this.mainMenu, function (item) {
         return item.sort;
@@ -14,7 +20,7 @@ Aristos.prototype.mainMenu = function () {
 Aristos.prototype.addToMainMenu = function (name, section, sort, icon) {
 
 
-    var key = _.slugify(name);
+    var key = section.key;
     var item = _.find(this.mainMenu, function (item) {
         return item.key == key;
     });
@@ -26,29 +32,28 @@ Aristos.prototype.addToMainMenu = function (name, section, sort, icon) {
 
     this.mainMenu.push({
         key: key,
-        section: section,
         name: name,
-        link: '/' + key,
+        href: '/' + key,
         sort: sort,
-        icon:icon
+        icon: icon
     });
+
+
 };
 
 
-Aristos.prototype.allowViewMainMenu = function (key) {
-    var item = _.find(this.mainMenu, function (item) {
-        return item.key == key;
-    });
-    return this.allowViewSection(item.section);
+Aristos.prototype.allowViewMainMenu = function (item) {
+    return this.allowViewSection(item.key);
 };
 
 
 Aristos.prototype.sections = function () {
     return    this.sections;
 };
-Aristos.prototype.addSection = function (name) {
+Aristos.prototype.addSection = function (name, controller) {
 
 
+    var self = this;
     var key = _.slugify(name);
     var item = _.find(this.sections, function (item) {
         return item.key == key;
@@ -62,11 +67,14 @@ Aristos.prototype.addSection = function (name) {
     };
 
     this.sections.push(section);
+
+
+
     return section;
 };
 
 Aristos.prototype.allowViewSection = function (key) {
-    return (Roles.userIsInRole(Meteor.userId, ['view', 'admin'], key));
+    return Roles.userIsInRole(Meteor.userId, ['view', 'admin'], key);
 };
 
 Aristos.prototype.allowViewSecretSection = function (key) {
