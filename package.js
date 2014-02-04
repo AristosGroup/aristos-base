@@ -4,17 +4,18 @@ Package.describe({
 
 Package.on_use(function (api) {
     api.use(['underscore-string-latest', 'roles']);
-    api.use(['deps', 'jquery', 'templating', 'handlebars', 'spark', 'coffeescript','accounts-base', 'service-configuration'], 'client');
+    api.use(['deps', 'jquery', 'templating', 'handlebars', 'spark', 'coffeescript', 'accounts-base', 'service-configuration'], 'client');
 
 
     api.add_files([
-
+        'lib/sections.js',
+        'lib/aristos.js'
 
     ], ['client', 'server']);
 
     api.add_files([
 
-        'client/aristos.js',
+
 
 
         'client/notifications/notifications.html',
@@ -30,8 +31,8 @@ Package.on_use(function (api) {
         'client/login.js',
 
 
-        'client/aside.html',
-        'client/aside.js',
+        'client/aside/aside.html',
+        'client/aside/aside.js',
 
         'client/layout.html',
 
@@ -46,5 +47,10 @@ Package.on_use(function (api) {
         'server/fixtures.js',
         'server/publish.js'
     ], 'server');
+
+
+    api.export('Sections', ['client', 'server']);
+    api.export('Aristos', ['client', 'server']);
+
 
 });
