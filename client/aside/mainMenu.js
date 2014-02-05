@@ -7,7 +7,6 @@ Template.mainMenu.helpers(
             console.log(Router.current().route.name);
 
             menu = _.map(menu, function (item) {
-                console.log(item.key);
                 if (_(Router.current().route.name).startsWith(item.key))
                     item.class = 'active';
 
