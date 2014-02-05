@@ -8,15 +8,14 @@ Package.on_use(function (api) {
 
 
     api.add_files([
-        'lib/sections.js',
+        'lib/modules.js',
         'lib/aristos.js'
 
     ], ['client', 'server']);
 
     api.add_files([
 
-
-
+        'client/subscribe.js',
 
         'client/notifications/notifications.html',
         'client/notifications/notifications.js',
@@ -30,12 +29,13 @@ Package.on_use(function (api) {
         'client/access_denied.html',
         'client/login.js',
 
+        'client/aside/mainMenu.html',
+        'client/aside/mainMenu.js',
 
         'client/aside/aside.html',
         'client/aside/aside.js',
 
         'client/layout.html',
-
 
         'css/app.css',
         'css/font.css',
@@ -49,7 +49,7 @@ Package.on_use(function (api) {
     ], 'server');
 
 
-    api.export('Sections', ['client', 'server']);
+    api.export('AristosModules', ['client', 'server']);
     api.export('Aristos', ['client', 'server']);
 
 

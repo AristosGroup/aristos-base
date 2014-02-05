@@ -82,26 +82,7 @@
                 </div>
                 <!-- / user -->
                 <!-- nav -->
-                <nav class="nav-primary hidden-xs">
-                    <ul class="nav">
-
-                        {{#each mainMenu}}
-                        <li class="{{class}}">
-                            <a  href="{{href}}">
-                                <i class="fa fa-{{icon}}"></i>
-                                <span>{{name}}</span>
-                            </a>
-                        </li>
-                        {{/each}}
-
-                        <li class="{{activeRouteClass  'users'}}">
-                            <a href="/users">
-                                <i class="fa fa-users"></i>
-                                <span>Users</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+{{>mainMenu}}
                 <!-- / nav -->
             </section>
             <footer class="footer bg-gradient hidden-xs text-center">

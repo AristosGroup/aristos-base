@@ -1,0 +1,30 @@
+<template name="mainMenu">
+    <nav class="nav-primary hidden-xs">
+        <ul class="nav">
+
+            {{#each mainMenu}}
+            <li class="{{class}} {{#if subMenu}}dropdown-submenu{{/if}}">
+                <a  href="{{pathFor key}}" class="{{#if subMenu}}dropdown-toggle{{/if}}" {{#if subMenu}}data-toggle="dropdown"{{/if}}>
+                <i class="fa fa-{{icon}}"></i>
+                <span>{{name}}</span>
+                </a>
+                {{#if subMenu}}
+                <ul class="dropdown-menu">
+                    {{#each subMenu}}
+
+                    <li><a href="{{pathFor key}}">{{name}}</a></li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </li>
+            {{/each}}
+
+            <li class="{{activeRouteClass  'users'}}">
+                <a href="/users">
+                    <i class="fa fa-users"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</template>

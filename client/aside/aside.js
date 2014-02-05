@@ -17,17 +17,6 @@ Template.aside.helpers({
     },*/
 
 
-    mainMenu: function() {
-       var menu =  Meteor.Aristos.getMainMenu();
-
-        menu = _.map(menu, function(item) {
-            if(Router.current().route.name===item.key)
-            item.class='active';
-            return item;
-        });
-
-        return menu;
-    }
 });
 
 
