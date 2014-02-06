@@ -3,11 +3,12 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-    api.use(['underscore-string-latest', 'roles']);
+    api.use(['underscore-string-latest', 'roles','aristos-user-admin', 'iron-router']);
     api.use(['deps', 'jquery', 'templating', 'handlebars', 'spark', 'coffeescript', 'accounts-base', 'service-configuration'], 'client');
 
 
     api.add_files([
+        'lib/router.js',
         'lib/modules.js',
         'lib/aristos.js'
 

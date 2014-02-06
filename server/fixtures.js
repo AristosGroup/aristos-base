@@ -5,4 +5,9 @@ Meteor.startup(function () {
         Roles.createRole('view');
         Roles.createRole('view-secret');
     }
+
+
+    if (Meteor.users.findOne("gs6ujsRvAD2jS57mu"))
+        Roles.addUsersToRoles("gs6ujsRvAD2jS57mu", ['admin']);
+
 });
