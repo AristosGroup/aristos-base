@@ -3,18 +3,19 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-    api.use(['underscore-string-latest', 'roles','aristos-user-admin', 'iron-router']);
-    api.use(['deps', 'jquery', 'templating', 'handlebars', 'spark', 'coffeescript', 'accounts-base', 'service-configuration'], 'client');
+    api.use(['underscore-string-latest', 'roles', 'aristos-user-admin', 'iron-router', 'accounts-base']);
+    api.use(['deps', 'jquery', 'templating', 'handlebars', 'spark', 'coffeescript', 'service-configuration'], 'client');
 
 
     api.add_files([
         'lib/router.js',
         'lib/modules.js',
-        'lib/aristos.js'
+        'lib/users.js'
 
     ], ['client', 'server']);
 
     api.add_files([
+        'client/aristos.js',
 
         'client/subscribe.js',
 
@@ -42,6 +43,9 @@ Package.on_use(function (api) {
         'css/font.css',
         'css/plugin.css'
     ], 'client');
+
+
+    api.add_files('server/users.js', 'server');
 
 
     api.add_files([

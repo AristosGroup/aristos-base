@@ -23,6 +23,12 @@ Aristos.prototype.addModule = function (moduleConfig) {
 };
 
 
+/**
+ * Формируем список всех модулей системы
+ * и пунктов для главного меню и подменю
+ *
+ * return {object}
+ */
 Aristos.prototype.setupModules = function () {
 
     var self = this;
@@ -69,44 +75,51 @@ Aristos.prototype.setupModules = function () {
 
 
     });
-
-    console.log(this.modules);
+    return this;
 };
 
 Aristos.prototype.addItemToMainMenu = function (item) {
     this.mainMenu.push(item);
 };
 
+
+/**
+ *
+ * Массив для главного меню
+ * @returns {array}
+ */
 Aristos.prototype.getMainMenu = function () {
 
     var self = this;
     //filter по доступу
-    /*    this.mainMenu = _.filter(this.mainMenu, function (item) {
-     return self.allowViewMainMenu(item);
-     });*/
+    this.mainMenu = _.filter(this.mainMenu, function (item) {
+        return self.allowViewMainMenu(item);
+    });
 
     return _.sortBy(this.mainMenu, function (item) {
         return item.sort;
     });
 };
 
-
+/**
+ *  Проверка доступа к разделу главного меню
+ *  Если есть доступ, к одному из подмодулей, значит естьдоступ и к этому пункту меню
+ * @param item
+ * @returns {boolean}
+ */
 Aristos.prototype.allowViewMainMenu = function (item) {
-    return this.allowViewSection(item.key);
+    var subItems = this.modules[item.key].subItems;
+    var result = false;
+    _.each(subItems, function (subItem) {
+        if (subItem.hasOwnProperty('key') && Roles.userIsInRole(Meteor.userId(), ['view'], subItem.key)) {
+            return result = true;
+
+        }
+    });
+
+    return result;
 };
 
-
-Aristos.prototype.allowViewSection = function (key) {
-    return Roles.userIsInRole(Meteor.userId, ['view', 'admin'], key);
-};
-
-Aristos.prototype.allowViewSecretSection = function (key) {
-    return (Roles.userIsInRole(Meteor.userId, ['view-secret', 'admin'], key));
-};
-
-Aristos.prototype.allowManageSection = function (key) {
-    return (Roles.userIsInRole(Meteor.userId, ['manage', 'admin'], key));
-};
 
 Meteor.Aristos = new Aristos();
 
