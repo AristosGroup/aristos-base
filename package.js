@@ -8,14 +8,16 @@ Package.on_use(function (api) {
 
 
     api.add_files([
+        'lib/aristosUtils.js',
+        'lib/module.js',
+        'lib/aristos.js',
         'lib/router.js',
-        'lib/modules.js',
+        'lib/modules_model.js',
         'lib/users.js'
 
     ], ['client', 'server']);
 
     api.add_files([
-        'client/aristos.js',
 
         'client/subscribe.js',
 
@@ -54,8 +56,11 @@ Package.on_use(function (api) {
     ], 'server');
 
 
+    api.export('AristosUtils', ['client', 'server']);
     api.export('AristosModules', ['client', 'server']);
+    api.export('AristosModuleBase', ['client', 'server']);
     api.export('Aristos', ['client', 'server']);
+    api.export('UserManager', ['client', 'server']);
 
 
 });

@@ -4,10 +4,12 @@ Accounts.onCreateUser(function (options, user) {
     };
     user = _.extend(user, userProperties);
 
+    var userManager = new UserManager(user);
+
     if (options.email)
         user.profile.email = options.email;
 
-    if (getEmail(user))
+    if (userManager.email())
         user.email_hash = getEmailHash(user);
 
     if (!user.profile.name)
@@ -22,38 +24,13 @@ Accounts.onCreateUser(function (options, user) {
     };
 
     // create slug from username
-    user.slug = _.slugify(getUserName(user));
-
-
-    // if user has already filled in their email, add them to MailChimp list
-    /*    if(user.profile.email)
-     addToMailChimpList(user);*/
-
-    // send notifications to admins
-    /*    var admins = Meteor.users.find({isAdmin: true});
-     admins.forEach(function(admin){
-     if(getUserSetting('notifications.users', false, admin)){
-     var notification = getNotificationContents({
-     event: 'newUser',
-     properties: {
-     username: getUserName(user),
-     profileUrl: getProfileUrl(user)
-     },
-     userId: admin._id
-     }, 'email');
-     sendNotification(notification, admin);
-     }
-     });*/
-
+    user.slug = _.slugify(userManager.getUserName());
 
     return user;
 });
 
 
-getEmailHash = function (user) {
-    // todo: add some kind of salt in here
-    return CryptoJS.MD5(getEmail(user).trim().toLowerCase() + user.createdAt).toString();
-};
+
 
 
 Meteor.methods({
@@ -63,9 +40,6 @@ Meteor.methods({
         ]}});
     },
 
-    testEmail: function () {
-        Email.send({from: 'test@test.com', to: getEmail(Meteor.user()), subject: 'Telescope email test', text: 'lorem ipsum dolor sit amet.'});
-    },
 
     setEmailHash: function (user) {
         var email_hash = CryptoJS.MD5(getEmail(user).trim().toLowerCase()).toString();

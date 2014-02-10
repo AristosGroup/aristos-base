@@ -2,7 +2,8 @@ Template.aside.helpers({
     userAvatar: function () {
         var user = Meteor.user();
 
-        return UsersManager.getGravatar(user);
+        console.log(user);
+        return  Meteor.userManager.getGravatar();
     },
 
 /*    activeRouteClass: function () {
