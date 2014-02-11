@@ -8,7 +8,7 @@ Package.on_use(function (api) {
 
 
     api.add_files([
-        'lib/aristosUtils.js',
+        'lib/AristosUtils.js',
         'lib/module.js',
         'lib/aristos.js',
         'lib/router.js',

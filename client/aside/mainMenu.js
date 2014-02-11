@@ -2,7 +2,7 @@ Template.mainMenu.helpers(
     {
 
         mainMenu: function () {
-            var menu = Meteor.Aristos.getMainMenu();
+            var menu = App.getMainMenu();
 
             menu = _.map(menu, function (item) {
                 if (_(Router.current().route.name).startsWith(item.key))
