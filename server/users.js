@@ -9,8 +9,7 @@ Accounts.onCreateUser(function (options, user) {
     if (options.email)
         user.profile.email = options.email;
 
-    if (userManager.email())
-        user.email_hash = getEmailHash(user);
+
 
     if (!user.profile.name)
         user.profile.name = user.username;
