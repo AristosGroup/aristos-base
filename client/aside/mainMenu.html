@@ -1,7 +1,6 @@
 <template name="mainMenu">
     <nav class="nav-primary hidden-xs">
         <ul class="nav">
-
             {{#each mainMenu}}
             <li class="{{class}} {{#if subMenu}}dropdown-submenu{{/if}}">
                 <a  href="{{pathFor key}}" class="{{#if subMenu}}dropdown-toggle{{/if}}" {{#if subMenu}}data-toggle="dropdown"{{/if}}>

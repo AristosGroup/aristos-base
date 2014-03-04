@@ -1,23 +1,13 @@
 Template.aside.helpers({
     userAvatar: function () {
-        var user = Meteor.user();
-
-        console.log(user);
-        return  Meteor.userManager.getGravatar();
-    },
-
-/*    activeRouteClass: function () {
-        var args = Array.prototype.slice.call(arguments, 0);
-        args.pop();
-
-        var active = _.any(args, function (name) {
-            return Router.current().route.name === name
-        });
-
-        return active && 'active';
-    },*/
-
-
+        console.log('Fetching user avatar');
+        if(user = Meteor.user()) {
+            console.log('Current user obj:', user);
+            return  Meteor.userManager.getGravatar();
+        } else {
+            return null;
+        }
+    }
 });
 
 
