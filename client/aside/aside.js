@@ -1,8 +1,7 @@
 Template.aside.helpers({
     userAvatar: function () {
-        console.log('Fetching user avatar');
+        console.log('Получение аватара пользователя');
         if(user = Meteor.user()) {
-            console.log('Current user obj:', user);
             return  Meteor.userManager.getGravatar();
         } else {
             return null;
