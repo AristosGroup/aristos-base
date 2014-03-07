@@ -61,6 +61,4 @@ Package.on_use(function (api) {
     api.export('AristosModuleBase', ['client', 'server']);
     api.export('Aristos', ['client', 'server']);
     api.export('UserManager', ['client', 'server']);
-
-
 });

@@ -1,11 +1,9 @@
 Template.aside.helpers({
     userAvatar: function () {
         console.log('Получение аватара пользователя');
-        if(user = Meteor.user()) {
-            return  Meteor.userManager.getGravatar();
-        } else {
-            return null;
-        }
+        var user = Meteor.user();
+        if(!user || !Meteor.userManager) return '/images/avatar_default.jpg';
+        return Meteor.userManager.getGravatar();
     }
 });
 
