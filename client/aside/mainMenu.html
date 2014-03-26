@@ -3,7 +3,7 @@
         <ul class="nav">
             {{#each mainMenu}}
             <li class="{{class}} {{#if subMenu}}dropdown-submenu{{/if}}">
-                <a  href="{{pathFor key}}" class="{{#if subMenu}}dropdown-toggle{{/if}}" {{#if subMenu}}data-toggle="dropdown"{{/if}}>
+                <a  class="{{#if subMenu}}dropdown-toggle{{/if}}" {{#if subMenu}}data-toggle="dropdown"{{/if}}>
                 <i class="fa fa-{{icon}}"></i>
                 <span>{{name}}</span>
                 </a>
