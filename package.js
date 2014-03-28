@@ -14,7 +14,7 @@ Package.on_use(function (api) {
     ], ['client', 'server']);
 
     api.use(['underscore-string-latest', 'roles', 'iron-router', 'accounts-base']);
-    api.use(['deps', 'jquery', 'templating', 'handlebars', 'spark', 'coffeescript', 'service-configuration'], 'client');
+    api.use(['deps', 'jquery', 'templating', 'handlebars', 'service-configuration'], 'client');
 
     api.add_files([
 

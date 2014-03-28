@@ -3,10 +3,17 @@
         <ul class="nav">
             {{#each mainMenu}}
             <li class="{{class}} {{#if subMenu}}dropdown-submenu{{/if}}">
-                <a  class="{{#if subMenu}}dropdown-toggle{{/if}}" {{#if subMenu}}data-toggle="dropdown"{{/if}}>
-                <i class="fa fa-{{icon}}"></i>
-                <span>{{name}}</span>
-                </a>
+                {{#if subMenu}}
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-{{icon}}"></i>
+                        <span>{{name}}</span>
+                    </a>
+                {{else}}
+                    <a>
+                        <i class="fa fa-{{icon}}"></i>
+                        <span>{{name}}</span>
+                    </a>
+                {{/if}}
                 {{#if subMenu}}
                 <ul class="dropdown-menu">
                     {{#each subMenu}}
