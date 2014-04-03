@@ -1,5 +1,7 @@
 <template name="aside">
 
+    {{#if currentUser}}
+
     <aside class="bg-black aside-sm nav-vertical " id="nav">
         <section class="vbox">
             <header class="bg-aristos dker nav-bar">
@@ -95,5 +97,7 @@
             </footer>
         </section>
     </aside>
+
+    {{/if}}
 
 </template>

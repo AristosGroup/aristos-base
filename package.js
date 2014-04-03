@@ -38,6 +38,8 @@ Package.on_use(function (api) {
         'client/aside/aside.html',
         'client/aside/aside.js',
 
+        'client/pagination/pagination.html',
+
         'client/layout.html',
 
         'css/app.css',
