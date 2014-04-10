@@ -1,3 +1,7 @@
+Npm.depends({
+    'debug': '0.8.0'
+});
+
 Package.describe({
     summary: "Aristos-base"
 });

@@ -8,14 +8,16 @@
 
                 <header class="panel-heading text-center">
                     <div>
-                        <h4>Ошибка доступа</h4>
-                        <p>Доступ к данному разделу запрещен текущими настройками.</p>
-                        {{#unless currentUser}}
+                        {{#if currentUser}}
+                            <h4>Ошибка доступа</h4>
+                            <p>Доступ к данному разделу запрещен текущими настройками.</p>
+                        {{else}}
+                            <h4>Требуется авторизация</h4>
                             <p>Пожалуйста, авторизуйтесь</p>
                             <form action="#signTo" class="panel-body">
                                 {{>loginButtons}}
                             </form>
-                        {{/unless}}
+                        {{/if}}
                     </div>
                 </header>
 

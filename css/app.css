@@ -2829,3 +2829,7 @@ fieldset[disabled] .btn-gplus.active {
 #signTo #login-dropdown-list {
     list-style: none;
 }
+
+body .accounts-dialog {
+    width: 220px;
+}
