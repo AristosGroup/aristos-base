@@ -757,6 +757,7 @@ html.layout-box .vbox > footer {
   font-size: 25px;
   line-height: 50px;
   display: block;
+  height: 49px;
 }
 .nav-brand:hover {
   text-decoration: none;
@@ -2832,4 +2833,11 @@ fieldset[disabled] .btn-gplus.active {
 
 body .accounts-dialog {
     width: 220px;
+}
+
+body .header .breadcrumb {
+    border: none;
+    background: none;
+    padding: 17px 0 0 0;
+    margin: 0;
 }
