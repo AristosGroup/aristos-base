@@ -18,6 +18,8 @@ Package.on_use(function (api) {
 
     api.add_files([
 
+        'jquery/lib/jquery.fadeandclear.js',
+
         'client/subscribe.js',
 
         'client/notifications/notifications.html',
@@ -44,7 +46,8 @@ Package.on_use(function (api) {
 
         'css/app.css',
         'css/font.css',
-        'css/plugin.css'
+        'css/plugin.css',
+        'img/preloader_atom_green_24.gif'
     ], 'client');
 
 

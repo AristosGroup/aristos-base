@@ -2817,7 +2817,6 @@ fieldset[disabled] .btn-gplus.active {
 
 .bg-aristos.dker a {
     color: #ffffff;
-
 }
 
 .modal-dialog {
@@ -2841,3 +2840,17 @@ body .header .breadcrumb {
     padding: 17px 0 0 0;
     margin: 0;
 }
+
+span.status {
+    font-size: 12px;
+    text-shadow: 0 0 2px #ccc;
+}
+
+i.ajax {
+    display: inline-block;
+    width: 24px; height: 24px;
+    background: url("/packages/aristos-base/img/preloader_atom_green_24.gif") no-repeat left center;
+    vertical-align: middle;
+}
+
+i.ajax.s16 { width: 16px; height: 16px; background-size: 100%; }
