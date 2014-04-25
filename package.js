@@ -22,15 +22,12 @@ Package.on_use(function (api) {
 
         'client/subscribe.js',
 
-        'client/notifications/notifications.html',
-        'client/notifications/notifications.js',
-
-        'client/errors.html',
-        'client/notFound.html',
-        'client/errors.js',
+        'client/events/events.html',
+        'client/events/events.js',
 
         'client/loading.html',
 
+        'client/notFound.html',
         'client/access_denied.html',
         'client/login.js',
 
@@ -61,6 +58,7 @@ Package.on_use(function (api) {
     api.export('AristosModuleBase', ['client', 'server']);
     api.export('Aristos', ['client', 'server']);
     api.export('UserManager', ['client', 'server']);
+    api.export('aEvent', 'client');
 
     //Utils
     api.add_files(['lib/AristosUtils.js'], ['client', 'server']);

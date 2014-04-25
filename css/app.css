@@ -2854,3 +2854,11 @@ i.ajax {
 }
 
 i.ajax.s16 { width: 16px; height: 16px; background-size: 100%; }
+
+.aEvents {
+    display: block;
+    position: absolute;
+    width: 30%;
+    right: 10px;
+    top: 10px;
+}
