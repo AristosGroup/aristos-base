@@ -2821,6 +2821,8 @@ fieldset[disabled] .btn-gplus.active {
 
 .modal-dialog {
     z-index: 10000;
+    width: auto;
+    margin: auto;
 }
 
 #signTo #login-buttons-password {
